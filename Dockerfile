@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y zabbix-server-mysql && \
 # File::Copy
 # Sys::Hostname
 # Data::Dumper
-		perl \
+#		perl \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
