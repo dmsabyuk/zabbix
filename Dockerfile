@@ -6,6 +6,30 @@ apt-get install -y apache2 openssh-server mysql-server mysql-client zabbix
 
 #!/bin/bash
 
+
+# Script trace mode
+if [ "${DEBUG_MODE}" == "true" ]; then
+    set -o xtrace
+fi
+
+# Type of Zabbix component
+# Possible values: [server, proxy, agent, frontend, java-gateway, appliance]
+zbx_type=${ZBX_TYPE}
+# Type of Zabbix database
+# Possible values: [mysql, postgresql]
+zbx_db_type=${ZBX_DB_TYPE}
+# Type of web-server. Valid only with zbx_type = frontend
+# Possible values: [apache, nginx]
+zbx_opt_type=${ZBX_OPT_TYPE}
+
+# Default Zabbix installation name
+# Used only by Zabbix web-interface
+ZBX_SERVER_NAME=${ZBX_SERVER_NAME:-"Zabbix docker"}
+# Default Zabbix server host
+ZBX_SERVER_HOST=${ZBX_SERVER_HOST:-"zabbix-server"}
+# Default Zabbix server port number
+ZBX_SERVER_PORT=${ZBX_SERVER_PORT:-"10051"}
+
 # Default directories
 # User 'zabbix' home directory
 ZABBIX_USER_HOME_DIR="/var/lib/zabbix"
