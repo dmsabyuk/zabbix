@@ -4,6 +4,8 @@ MAINTAINER dimasabyuk@gmail.com
 RUN apt-get update && apt-get upgrade && \
 apt-get install -y apache2 openssh-server mysql-server mysql-client zabbix 
 
+#!/bin/bash
+
 # Default directories
 # User 'zabbix' home directory
 ZABBIX_USER_HOME_DIR="/var/lib/zabbix"
