@@ -7,8 +7,8 @@ ENV     MYSQL_USER=dima \
         MYSQL_RUN_DIR=/run/mysqld \
         MYSQL_LOG_DIR=/var/log/mysql
 
-RUN echo "mysql-server mysql-server/root_password password root" | 
-RUN echo "mysql-server mysql-server/root_password_again password root" | 
+RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
+RUN echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections
 
 
 RUN apt-get update && apt-get install -y zabbix-server-mysql
