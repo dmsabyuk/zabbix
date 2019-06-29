@@ -4,6 +4,11 @@ python:
 branches:
   only:
     - master
+before_install:
+ - chmod +x gradlew
 install:
 pip install install-requires
 pip install requirements.txt
+
+
+
