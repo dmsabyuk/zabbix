@@ -4,5 +4,4 @@ python:
 branches:
   only:
     - master
-pip install install-requires
-pip install requirements.txt
+pip freeze
