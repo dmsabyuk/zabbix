@@ -5,4 +5,5 @@ branches:
   only:
     - master
 install:
-  -pip freeze
+pip install install-requires
+pip install requirements.txt
