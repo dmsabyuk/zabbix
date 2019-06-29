@@ -1,14 +1,6 @@
-dist: xenial
 language: python
 python:
   - "3.6"
-#install:
-#  - pip install -r # requirements.txt
-#script:
-# - python -m unittest discover
-#provider: pages
-#  skip_cleanup
-#  github_token: $GITHUB_TOKEN #https://github.com/settings/tokens
 branches:
   only:
     - master
