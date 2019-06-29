@@ -12,6 +12,8 @@ ENV     MYSQL_USER=dima \
 RUN apt-get update && apt-get install -y zabbix-server-mysql && \
 mysql-server=${MYSQL_VERSION} mysql-client
 
+RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
+RUN echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections
 
 EXPOSE 3306/tcp
 
