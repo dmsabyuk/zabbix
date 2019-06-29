@@ -8,4 +8,4 @@ script:
   - python -m unittest discover
 provider: pages
   skip_cleanup
-  github_token: $GITHUB_TOKEN
+  github_token: $GITHUB_TOKEN #https://github.com/settings/tokens
