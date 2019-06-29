@@ -4,4 +4,5 @@ python:
 branches:
   only:
     - master
-pip freeze
+install:
+  -pip freeze
