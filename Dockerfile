@@ -15,10 +15,6 @@ RUN apt-get update && apt-get install -y \
         vim
 
 
-EXPOSE 3306/tcp
-
-
-
 #!/bin/bash
-EXPOSE 22 80
+EXPOSE 22 80 3306/tcp
 
