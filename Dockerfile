@@ -7,18 +7,15 @@ ENV     MYSQL_USER=dima \
         MYSQL_RUN_DIR=/run/mysqld \
         MYSQL_LOG_DIR=/var/log/mysql
 
+RUN echo "mysql-server mysql-server/root_password password root" | 
+RUN echo "mysql-server mysql-server/root_password_again password root" | 
 
 
-RUN apt-get update && apt-get install -y zabbix-server-mysql && \
-mysql-server=${MYSQL_VERSION} mysql-client
+RUN apt-get update && apt-get install -y zabbix-server-mysql
 
-RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
-RUN echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections
 
 EXPOSE 3306/tcp
 
-#CMD    MYSQL_USER=admin \
-#       MYSQL_PASS=**111** \
 
 
 #!/bin/bash
