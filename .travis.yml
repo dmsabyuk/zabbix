@@ -1,14 +1,29 @@
 language: python
 python:
   - "3.6"
+
 branches:
   only:
     - master
 before_install:
  - chmod +x gradlew
+
 install:
 pip install install-requires
 pip install requirements.txt
 
+services:
+  - docker
 
 
+
+$ git clone https://github.com/dmsabyuk/zabbix/Dockerfile
+
+before_install:
+- docker build -t dimasabyuk/my-zabbix-server
+- docker run -d -p 127.0.0.1:80:4567  /bin/sh;
+       exit;
+- docker ps -a
+
+travis env set DOCKER_USERNAME myusername
+travis env set DOCKER_PASSWORD secretsecret
