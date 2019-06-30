@@ -25,8 +25,9 @@ $ git clone https://github.com/dmsabyuk/zabbix/Dockerfile.git
 
 before_install:
 - docker build -t dimasabyuk/travis-my-zabbix-server
-- docker run -d -p 127.0.0.1:80:4567  /bin/sh;
+- docker run --name zabbix -it -p 127.0.0.1:80:4567 dimasabyuk/travis-my-zabbix-server /bin/sh;
        exit;
+-docker start zabbix
 - docker ps -a
 
 - docker login -u $DOCKER_USER -p $DOCKER_PASS -e $DOCKER_EMAIL
